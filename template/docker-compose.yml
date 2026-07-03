@@ -1,5 +1,7 @@
 services:
   widget:
-    build: .
+    image: nginx:alpine
+    volumes:
+      - .:/usr/share/nginx/html
     ports:
       - "8585:80"
