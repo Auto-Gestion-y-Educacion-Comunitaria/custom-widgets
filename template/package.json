@@ -1,0 +1,13 @@
+{
+  "name": "@auge/widget-diploma",
+  "version": "0.0.1",
+  "description": "Custom Grist widget to render Auge reading-program diplomas from a Grist table.",
+  "widgetId": "@auge/widget-diploma",
+  "published": true,
+  "accessLevel": "read table",
+  "renderAfterReady": true,
+  "authors": [
+    "Martin Auge"
+  ],
+  "isGristLabsMaintained": false
+}

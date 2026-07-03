@@ -1,0 +1,130 @@
+html, body {
+  margin: 0;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#diploma-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+#publication {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: relative;
+  overflow: hidden;
+}
+.status {
+  padding: 40px;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+.status h2 {
+  font-size: 22px;
+  margin-bottom: 16px;
+  color: #333;
+}
+.status p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
+}
+.status .checklist {
+  text-align: left;
+  background: #f5f5f5;
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin: 16px 0;
+}
+.status .checklist div {
+  padding: 4px 0;
+  font-size: 13px;
+  color: #555;
+}
+.status .checklist .done {
+  color: #2e7d32;
+}
+.status .checklist .pending {
+  color: #999;
+}
+.status .button {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 4px 6px;
+  background: #eee;
+  border-radius: 4px;
+  color: #555;
+  text-decoration: none;
+  font-size: 13px;
+  border: 1px solid #ddd;
+}
+.status .button:hover {
+  background: #e0e0e0;
+}
+.status .error {
+  color: #c62828;
+  font-size: 14px;
+}
+.print {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
+.print button {
+  padding: 10px 20px;
+  background: #ff8000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.print button:hover {
+  background: #e67300;
+}
+@media print {
+  .print {
+    display: none;
+  }
+  #diploma-wrapper {
+    padding: 0;
+    min-height: auto;
+  }
+  #publication {
+    box-shadow: none;
+  }
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+.status .help {
+  text-align: left;
+  background: #1a1a1a;
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin: 16px 0;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.status .help .label {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 2px 3px;
+  font-size: 11px;
+  font-family: monospace;
+}
+.status .help .label.recognized {
+  background: #2e7d32;
+  color: #fff;
+}
+.status .help .label.expected {
+  background: #1565c0;
+  color: #fff;
+}
