@@ -7,6 +7,7 @@ function ready(fn) {
   else { document.addEventListener('DOMContentLoaded', fn); }
 }
 
+var DIPLOMA_KEY = 'datos_diploma';
 var DIPLOMA_FIELDS = [
   'Nombres', 'Apellido_Paterno', 'Apellido_Materno',
   'Subprograma', 'Ha_avanzado_en', 'Continuar_trabajando',
@@ -48,7 +49,7 @@ ready(function () {
         return;
       }
       if (document.location.search.indexOf('demo=1') > -1) {
-        this.diploma = exampleData;
+        this.diploma = exampleData[DIPLOMA_KEY] || exampleData;
         return;
       }
 
@@ -69,9 +70,13 @@ ready(function () {
     methods: {
       updateDiploma: function (row) {
         if (!row) { this.diploma = null; return; }
+        var source = row[DIPLOMA_KEY] || row;
+        if (typeof source === 'string') {
+          try { source = JSON.parse(source); } catch (e) { source = {}; }
+        }
         var mapped = {};
         DIPLOMA_FIELDS.forEach(function (f) {
-          mapped[f] = row[f] || '';
+          mapped[f] = source[f] || '';
         });
         this.diploma = mapped;
         this.status = null;
