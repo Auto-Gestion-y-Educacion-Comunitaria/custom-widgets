@@ -3,18 +3,79 @@ html, body {
   overflow: hidden;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+#app {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+#app-config {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 #diploma-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   padding: 20px;
 }
-#publication {
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+#diploma {
+  width: 396px;
+  height: 612px;
+  background-color: white;
   position: relative;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   overflow: hidden;
 }
+.text-frame {
+  border-style: solid;
+}
+.text-anchor {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+#_idContainer005 .text-anchor { transform: translate(0px, 4.61px); }
+#_idContainer008 .text-anchor { transform: translate(0px, 5.32px); }
+#_idContainer009 .text-anchor,
+#_idContainer010 .text-anchor { transform: translate(0px, 4.72px); }
+#_idContainer011 .text-anchor,
+#_idContainer012 .text-anchor,
+#_idContainer027 .text-anchor { transform: translate(0px, 4.35px); }
+#_idContainer013 .text-anchor { transform: translate(0px, 4.54px); }
+#_idContainer014 .text-anchor { transform: translate(0px, 3.75px); }
+#_idContainer015 .text-anchor,
+#_idContainer016 .text-anchor,
+#_idContainer017 .text-anchor,
+#_idContainer018 .text-anchor,
+#_idContainer019 .text-anchor,
+#_idContainer020 .text-anchor,
+#_idContainer021 .text-anchor,
+#_idContainer022 .text-anchor { transform: translate(0px, 3.11px); }
+#_idContainer024 .text-anchor { transform: translate(0px, 2.38px); }
+#_idContainer025 .text-anchor { transform: translate(0px, 3.88px); }
+.nowrap {
+  line-height: 1;
+  white-space: nowrap;
+}
+.font-giulia {
+  font-family: "Giulia Plain", sans-serif;
+}
+.font-helvetica {
+  font-family: "Helvetica Neue", sans-serif;
+}
+.size-10 { font-size: 10px; }
+.size-11 { font-size: 11px; }
+.size-12 { font-size: 12px; }
+.size-14 { font-size: 14px; }
+.size-17 { font-size: 17px; }
+.size-19 { font-size: 19px; }
+.bold { font-weight: bold; }
+.medium { font-weight: 500; }
+.text-white { color: #ffffff; }
+.text-black { color: #000000; }
 .status {
   padding: 40px;
   max-width: 500px;
@@ -95,7 +156,7 @@ html, body {
     padding: 0;
     min-height: auto;
   }
-  #publication {
+  #diploma {
     box-shadow: none;
   }
   body {

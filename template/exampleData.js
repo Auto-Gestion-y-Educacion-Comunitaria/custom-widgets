@@ -7,5 +7,5 @@ var exampleData = {
   Continuar_trabajando: "fluidez lectora",
   Habilidades_conquistadas: "identifica vocales, consonantes y sílabas simples; lee palabras cortas",
   Responsable: "Sra. Martínez",
-  Libros: "5 libros",
+  Libros: "5",
 };
