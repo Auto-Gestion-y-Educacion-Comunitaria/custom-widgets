@@ -1,273 +1,226 @@
-@font-face {
-	font-family:"Giulia Plain";
-	font-style:normal;
-	font-weight:normal;
-	src : url("../font/GiuliaPlain-Regular.otf");
-}
-@font-face {
-	font-family:"Helvetica Neue";
-	font-style:normal;
-	font-weight:normal;
-	src : url("../font/HelveticaNeue.ttc");
-}
-@font-face {
-	font-family:"Helvetica Neue";
-	font-style:normal;
-	font-weight:bold;
-	src : url("../font/HelveticaNeue-Bold.ttc");
-}
-@font-face {
-	font-family:"Helvetica Neue";
-	font-style:normal;
-	font-weight:500;
-	src : url("../font/HelveticaNeue-Medium.ttc");
-}
-@font-face {
-	font-family:"Minion Pro";
-	font-style:normal;
-	font-weight:normal;
-	src : url("../font/MinionPro-Regular.otf");
-}
-body, div, dl, dt, dd, h1, h2, h3, h4, h5, h6, p, pre, code, blockquote, figure {
-	margin:0;
-	padding:0;
-	border-width:0;
-	text-rendering:optimizeSpeed;
-}
-div > svg {
-	position:absolute;
-}
-div.basic-graphic-frame {
-	border-color:#000000;
-	border-width:1px;
-	border-style:solid;
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  --helvetica: "Roboto", sans-serif;
+  --giulia: "Chewy", cursive;
 }
 
-#_idContainer000 {
-	height:586.53px;
-	position:absolute;
-	left: 5.474px;
-	top: 17.987px;
-	width:385.05px;
+body, div, dl, dt, dd, h1, h2, h3, h4, h5, h6, p, pre, code, blockquote, figure {
+  margin:0;
+  padding:0;
+  border-width:0;
+  text-rendering:optimizeSpeed;
 }
-#_idContainer001 {
-	height:51.42px;
-	position:absolute;
-	left: 48.150px;
-	top: 218.652px;
-	width:300.00px;
+
+div > svg {
+  position:absolute;
 }
-#_idContainer002 {
-	height:51.42px;
-	position:absolute;
-	left: 47.442px;
-	top: 383.533px;
-	width:300.00px;
+
+p {
+  line-height:1;
+  white-space:nowrap;
+  text-align:center;
 }
-#_idContainer003 {
-	height:19.24px;
-	position:absolute;
-	left: 309.678px;
-	top: 477.532px;
-	width:42.02px;
+
+span.CharOverride-1 {
+  color:#ffffff;
+  font-family: var(--giulia);
+  font-size:14px;
 }
-#_idContainer004 {
-	height:102.27px;
-	left:0px;
-	position:absolute;
-	top:0px;
-	transform:translate(12.012px,48.107px) rotate(338.000deg);
-	width:102.27px;
+
+span.CharOverride-2 {
+  color:#000000;
+  font-family: var(--helvetica);
+  font-size:17px;
+  font-weight:bold;
 }
-#_idContainer005 {
-	height:26.64px;
-	position:absolute;
-	left: 231.853px;
-	top: 147.205px;
-	width:116.30px;
+
+span.CharOverride-3 {
+  color:#000000;
+  font-family: var(--helvetica);
+  font-size:12px;
+  font-weight:500;
 }
-#_idContainer006 {
-	height:16.02px;
-	position:absolute;
-	left: 131.299px;
-	top: 547.729px;
-	width:139.84px;
+
+span.CharOverride-4 {
+  color:#000000;
+  font-family: var(--helvetica);
+  font-size:10px;
+  font-weight:500;
 }
-#_idContainer007 {
-	height:1.00px;
-	position:absolute;
-	left: 111.175px;
-	top: 547.907px;
-	width:159.97px;
+
+span.CharOverride-6 {
+  color:#000000;
+  font-family: var(--helvetica);
+  font-size:10px;
 }
-#_idContainer008 {
-	height:32.83px;
-	position:absolute;
-	left: 82.120px;
-	top: 90.276px;
-	width:232.37px;
+
+span.CharOverride-7 {
+  color:#ffffff;
+  font-family: var(--giulia);
+  font-size:19px;
 }
-#_idContainer009 {
-	height:24.58px;
-	position:absolute;
-	left: 46.587px;
-	top: 116.490px;
-	width:149.17px;
+
+img.fullSize {
+  height:100.00%;
+  min-width:100%;
+  width:100.00%;
 }
-#_idContainer010 {
-	height:24.22px;
-	position:absolute;
-	left: 203.690px;
-	top: 116.490px;
-	width:150.84px;
+
+img.absPos {
+  left:0px;
+  position:absolute;
+  top:0px;
 }
-#_idContainer011 {
-	height:50.57px;
-	position:absolute;
-	left: 57.632px;
-	top: 218.371px;
-	width:280.12px;
+
+#_idContainerBgAcuarela {
+  position:absolute;
+  width:369.56px;
+  height:569.50px;
+  left:19.142px;
+  top:20.878px;
 }
-#_idContainer012 {
-	height:50.57px;
-	position:absolute;
-	left: 57.632px;
-	top: 383.301px;
-	width:285.27px;
+
+#_idContainerAugutoBrinca {
+  position:absolute;
+  width:102.27px;
+  height:102.27px;
+  left:12.012px;
+  top:56.611px;
+  transform:rotate(338.000deg);
 }
-#_idContainer013 {
-	height:20.92px;
-	position:absolute;
-	left: 311.095px;
-	top: 475.158px;
-	width:38.20px;
+
+#_idContainerNombres {
+  position:absolute;
+  width:232.37px;
+  height:32.83px;
+  left:82.120px;
+  top:98.780px;
 }
-#_idContainer014 {
-	height:19.08px;
-	position:absolute;
-	left: 112.519px;
-	top: 545.381px;
-	width:158.62px;
+
+#_idContainerApellidos {
+  position:absolute;
+  width:300.00px;
+  height:24.22px;
+  left:46.587px;
+  top:124.994px;
 }
-#_idContainer015 {
-	height:27.13px;
-	left:0px;
-	position:absolute;
-	top:0px;
-	transform:translate(78.691px,60.842px) rotate(0.250deg);
-	width:238.79px;
+
+#_idContainerMiembroDeSubprograma {
+  position:absolute;
+  width:268.0px;
+  height:26.0px;
+  left:80.8px;
+  top:150.50px;
 }
-#_idContainer016 {
-	height:25.18px;
-	left:0px;
-	position:absolute;
-	top:0px;
-	transform:translate(80.808px,148.354px) rotate(0.250deg);
-	width:151.77px;
+
+#_idContainerPorqueDurante {
+  position:absolute;
+  width:323.83px;
+  height:36.67px;
+  left:38.352px;
+  top:185.709px;
 }
-#_idContainer017 {
-	height:18.83px;
-	position:absolute;
-	left: 35.719px;
-	top: 274.043px;
-	width:324.60px;
+
+#_idContainerHaAvanzado {
+  position:absolute;
+  width:251.20px;
+  height:67.70px;
+  left:50.269px;
+  top:228.184px;
+  background: #fdeddf;
+  border-radius: 8px;
+  padding: 8px 8px;
 }
-#_idContainer018 {
-	height:36.67px;
-	position:absolute;
-	left: 36.233px;
-	top: 176.177px;
-	width:323.83px;
+
+#_idContainerAugitoEchaPorras {
+  position:absolute;
+  width:81.80px;
+  height:81.80px;
+  left:301.174px;
+  top:248.600px;
 }
-#_idContainer019 {
-	height:18.83px;
-	position:absolute;
-	left: 32.345px;
-	top: 362.242px;
-	width:323.83px;
+
+#_idContainerAunNecesita {
+  position:absolute;
+  width:267.17px;
+  height:23.35px;
+  left:62.170px;
+  top:317.667px;
 }
-#_idContainer020 {
-	height:38.16px;
-	position:absolute;
-	left: 33.454px;
-	top: 432.587px;
-	width:324.60px;
+
+#_idContainerContinuarTrabajando {
+  position:absolute;
+  width:283.02px;
+  height:59.39px;
+  left:50.276px;
+  top:340.020px;
+  background: #fdeddf;
+  border-radius: 8px;
+  padding: 8px 8px;
 }
-#_idContainer021 {
-	height:20.73px;
-	position:absolute;
-	left: 34.712px;
-	top: 477.127px;
-	width:274.68px;
+
+#_idContainerPeroSeguramente {
+  position:absolute;
+  width:324.60px;
+  height:38.16px;
+  left:36.288px;
+  top:415.126px;
 }
-#_idContainer022 {
-	height:25.14px;
-	position:absolute;
-	left: 33.977px;
-	top: 493.740px;
-	width:322.20px;
+
+#_idContainerFelicidadesLibros {
+  position:absolute;
+  width:322.2px;
+  height:47.8px;
+  left:34.0px;
+  top:463.4px;
 }
-#_idContainer023 {
-	height:81.80px;
-	position:absolute;
-	left: 291.694px;
-	top: 284.716px;
-	width:81.80px;
+
+span.CampoEnLinea {
+  color:#000000;
+  font-family: var(--helvetica);
+  font-size:11px;
+  font-weight:500;
+  background: #fdeddf;
+  border-radius: 6px;
+  padding: 3px 4px;
 }
-#_idContainer024 {
-	height:19.70px;
-	position:absolute;
-	left: 135.269px;
-	top: 560.776px;
-	width:60.88px;
+
+.line {
+  display: block;
+  height: 0px;
+  border: 0;
+  border-top: 1.1px solid black;
+  margin: 0;
+  padding: 0;
 }
-#_idContainer025 {
-	height:21.20px;
-	position:absolute;
-	left: 194.727px;
-	top: 559.276px;
-	width:106.45px;
+
+#_idContainerFirma {
+  position:absolute;
+  width:158.62px;
+  height:40.0px;
+  left:53.0px;
+  top:540.0px;
 }
-#_idContainer026 {
-	height:58.00px;
-	position:absolute;
-	left: 46.733px;
-	top: 298.339px;
-	width:254.44px;
+
+#_idContainerFirma p {
+  line-height: 10px;
 }
-#_idContainer027 {
-	height:56.77px;
-	position:absolute;
-	left: 57.632px;
-	top: 298.028px;
-	width:237.37px;
+
+#_idContainerTribusAuge {
+  position:absolute;
+  width:238.79px;
+  height:27.13px;
+  left:78.691px;
+  top:69.346px;
+  transform:rotate(0.250deg);
 }
-#_idContainer028 {
-	height:95.05px;
-	left:0px;
-	position:absolute;
-	top:0px;
-	transform:translate(284.766px,117.215px) rotate(280.000deg);
-	width:63.11px;
-}
-#_idContainer029 {
-	height:88.86px;
-	position:absolute;
-	left: 301.174px;
-	top: 37.496px;
-	width:63.31px;
-}
-img.full-size {
-	height:100.00%;
-	min-width:100%;
-	width:100.00%;
-}
-img.absolute-position {
-	left:0px;
-	position:absolute;
-	top:0px;
-}
-div.transparent-background {
-	background-color:transparent;
-	border-width:0px;
+
+#_idContainerLogoAuge {
+  position:absolute;
+  width:158.62px;
+  height:67.85px;
+  left:202.960px;
+  top:498.471px;
 }
