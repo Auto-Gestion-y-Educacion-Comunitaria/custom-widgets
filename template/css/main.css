@@ -23,5 +23,5 @@
 }
 html, body {
 	margin: 0;
-	overflow: hidden
+	overflow-y: auto
 }

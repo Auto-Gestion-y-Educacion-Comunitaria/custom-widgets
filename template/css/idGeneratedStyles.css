@@ -19,7 +19,7 @@ div > svg {
 
 p {
   line-height:1;
-  white-space:nowrap;
+  white-space:break-spaces;
   text-align:center;
 }
 
