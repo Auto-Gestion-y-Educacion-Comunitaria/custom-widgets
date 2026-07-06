@@ -23,6 +23,18 @@ function addDemo(row, isLabels) {
   return row;
 }
 
+function mapRecord(source) {
+  if (typeof source === 'string') {
+    try { source = JSON.parse(source); } catch (e) { source = {}; }
+  }
+  if (!source || typeof source !== 'object') source = {};
+  var mapped = {};
+  DIPLOMA_FIELDS.forEach(function (f) {
+    mapped[f] = source[f] || '';
+  });
+  return mapped;
+}
+
 function fitText() {
   var containers = document.querySelectorAll('.fit-text');
   for (var ci = 0; ci < containers.length; ci++) {
@@ -67,7 +79,7 @@ ready(function () {
     el: '#app',
     data: {
       status: 'waiting',
-      diploma: null,
+      diplomas: [],
       tableConnected: false,
       haveRows: false,
       rowConnected: false,
@@ -76,18 +88,20 @@ ready(function () {
       var self = this;
 
       if (document.location.search.indexOf('labels=1') > -1) {
-        this.diploma = addDemo({}, true);
+        this.diplomas = [addDemo({}, true)];
         return;
       }
       if (document.location.search.indexOf('demo=1') > -1) {
-        this.diploma = exampleData[DIPLOMA_KEY] || exampleData;
+        this.diplomas = exampleDiplomas.map(function (row) {
+          return mapRecord(row[DIPLOMA_KEY] || row);
+        });
         return;
       }
 
       grist.ready({ requiredAccess: 'read table' });
 
-      grist.onRecord(function (row) {
-        self.updateDiploma(row);
+      grist.onRecords(function (records) {
+        self.updateDiplomas(records);
       });
 
       grist.on('message', function (e) {
@@ -99,22 +113,19 @@ ready(function () {
       });
     },
     mounted: function () {
-      if (this.diploma) fitText();
+      if (this.diplomas.length) fitText();
     },
     methods: {
-      updateDiploma: function (row) {
-        if (!row) { this.diploma = null; return; }
-        var source = row[DIPLOMA_KEY] || row;
-        if (typeof source === 'string') {
-          try { source = JSON.parse(source); } catch (e) { source = {}; }
+      updateDiplomas: function (rows) {
+        if (!rows || !rows.length) { this.diplomas = []; return; }
+        var mapped = [];
+        for (var ri = 0; ri < rows.length; ri++) {
+          var row = rows[ri];
+          var source = row[DIPLOMA_KEY] || row;
+          mapped.push(mapRecord(source));
         }
-        var mapped = {};
-        DIPLOMA_FIELDS.forEach(function (f) {
-          mapped[f] = source[f] || '';
-        });
-        this.diploma = mapped;
+        this.diplomas = mapped;
         this.status = null;
-        var self = this;
         this.$nextTick(fitText);
       },
       updateStatus: function () {

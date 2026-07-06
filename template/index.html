@@ -29,8 +29,8 @@
     <div v-if="status === 'error'" class="status">
       <p class="error">{{ status }}</p>
     </div>
-    <div v-if="diploma" id="diploma-wrapper">
-      <div id="diploma">
+    <div v-if="diplomas.length" id="diploma-wrapper">
+      <div v-for="(diploma, idx) in diplomas" :key="idx" class="diploma">
 
         <div id="_idContainerBgAcuarela">
           <img class="fullSize absPos" src="image/Mancha_acuarela.png" alt="" />
@@ -40,29 +40,29 @@
         </div>
 
         <div id="_idContainerTribusAuge">
-          <p><span id="_idTextSpan008" class="CharOverride-7">Tribus Auge felicita a:</span></p>
+          <p><span class="CharOverride-7">Tribus Auge felicita a:</span></p>
         </div>
         <div id="_idContainerNombres">
-          <p><a><span id="_idTextSpan001" class="CharOverride-2">{{ diploma.Nombres }}</span></a></p>
+          <p><a><span class="CharOverride-2">{{ diploma.Nombres }}</span></a></p>
         </div>
         <div id="_idContainerApellidos">
           <p>
-            <a><span id="_idTextSpan002" class="CharOverride-3">{{ diploma.Apellido_Paterno }}</span></a>
-            <a><span id="_idTextSpan003" class="CharOverride-3">{{ diploma.Apellido_Materno }}</span></a>
+            <a><span class="CharOverride-3">{{ diploma.Apellido_Paterno }}</span></a>
+            <a><span class="CharOverride-3">{{ diploma.Apellido_Materno }}</span></a>
           </p>
         </div>
         <div id="_idContainerMiembroDeSubprograma">
           <p>
-            <span id="_idTextSpan012" class="CharOverride-1">Muy querido miembro de</span>
-            <a><span id="_idTextSpan000" class="CharOverride-1">{{ diploma.Subprograma }}</span></a>
+            <span class="CharOverride-1">Muy querido miembro de</span>
+            <a><span class="CharOverride-1">{{ diploma.Subprograma }}</span></a>
           </p>
         </div>
         <div id="_idContainerPorqueDurante">
-          <p><span id="_idTextSpan016" class="CharOverride-1">Porque durante este ciclo en </span></p>
-          <p><span id="_idTextSpan021" class="CharOverride-1">Tribus avanzó mucho y ya logra:</span></p>
+          <p><span class="CharOverride-1">Porque durante este ciclo en </span></p>
+          <p><span class="CharOverride-1">Tribus avanzó mucho y ya logra:</span></p>
         </div>
         <div id="_idContainerHaAvanzado" class="fit-text">
-          <p><a><span id="_idTextSpan004" class="CharOverride-4">{{ diploma.Ha_avanzado_en }}</span></a></p>
+          <p><a><span class="CharOverride-4">{{ diploma.Ha_avanzado_en }}</span></a></p>
         </div>
 
         <div id="_idContainerAugitoEchaPorras">
@@ -70,34 +70,36 @@
         </div>
 
         <div id="_idContainerAunNecesita">
-          <p><span id="_idTextSpan027" class="CharOverride-1">Aún necesita continuar trabajando en:</span></p>
+          <p><span class="CharOverride-1">Aún necesita continuar trabajando en:</span></p>
         </div>
         <div id="_idContainerContinuarTrabajando" class="fit-text">
-          <p><a><span id="_idTextSpan005" class="CharOverride-4">{{ diploma.Continuar_trabajando }}</span></a></p>
+          <p><a><span class="CharOverride-4">{{ diploma.Continuar_trabajando }}</span></a></p>
         </div>
         <div id="_idContainerPeroSeguramente">
-          <p><span id="_idTextSpan032" class="CharOverride-1">pero seguramente lo logrará, pues tiene todas las </span>
+          <p><span class="CharOverride-1">pero seguramente lo logrará, pues tiene todas las </span>
           </p>
-          <p><span id="_idTextSpan040" class="CharOverride-1">potencialidades para hacerlo. </span></p>
+          <p><span class="CharOverride-1">potencialidades para hacerlo. </span></p>
         </div>
         <div v-if="diploma.Libros > 0" id="_idContainerFelicidadesLibros">
           <p>
-            <span id="_idTextSpan043" class="CharOverride-1">Felicidades pues además en este ciclo leyó</span>
-            <a><span id="_idTextSpan006" class="CampoEnLinea">{{ diploma.Libros }}</span></a>
+            <span class="CharOverride-1">Felicidades pues además en este ciclo leyó</span>
+            <a><span class="CampoEnLinea">{{ diploma.Libros }}</span></a>
           </p>
           <p>
-            <span id="_idTextSpan051" class="CharOverride-1">libros y la lectura le ayuda a mejorar aún más.</span>
+            <span class="CharOverride-1" v-if="diploma.Libros > 1">libros</span>
+            <span class="CharOverride-1" v-else>libro</span>
+            <span class="CharOverride-1">y la lectura le ayuda a mejorar aún más.</span>
           </p>
         </div>
 
         <div id="_idContainerFirma">
           <div class="line"></div>
           <p>
-            <a><span id="_idTextSpan007" class="CharOverride-6">{{ diploma.Responsable }}</span></a>
+            <a><span class="CharOverride-6">{{ diploma.Responsable }}</span></a>
           </p>
           <p>
-            <span id="_idTextSpan061" class="CharOverride-6">Maestra de </span>
-            <a><span id="_idTextSpan063" class="CharOverride-6">{{ diploma.Subprograma }}</span></a>
+            <span class="CharOverride-6">Maestra de </span>
+            <a><span class="CharOverride-6">{{ diploma.Subprograma }}</span></a>
           </p>
         </div>
 

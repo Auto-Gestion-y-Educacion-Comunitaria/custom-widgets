@@ -15,17 +15,20 @@ html, body {
 }
 #diploma-wrapper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  gap: 20px;
   padding: 20px;
 }
-#diploma {
+.diploma {
   width: 396px;
   height: 612px;
   background-color: white;
   position: relative;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   overflow: hidden;
+  flex-shrink: 0;
 }
 .status {
   padding: 40px;
@@ -99,16 +102,36 @@ html, body {
 .print button:hover {
   background: #e67300;
 }
+@page {
+  size: letter landscape;
+  margin: 0;
+  margin-top: 20mm;
+}
+
 @media print {
+  #app {
+    display: block;
+  }
+  #app > *:not(#diploma-wrapper) {
+    display: none !important;
+  }
   .print {
     display: none;
   }
   #diploma-wrapper {
     padding: 0;
+    gap: 0;
     min-height: auto;
+    align-items: stretch;
   }
-  #diploma {
+  .diploma {
     box-shadow: none;
+    page-break-inside: avoid;
+    margin: 5mm;
+  }
+  
+  .diploma:nth-child(2n) {
+    page-break-after: always;
   }
   body {
     -webkit-print-color-adjust: exact;
