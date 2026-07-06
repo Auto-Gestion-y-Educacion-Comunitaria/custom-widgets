@@ -35,6 +35,14 @@ function mapRecord(source) {
   return mapped;
 }
 
+function fitTextWhenReady(fn) {
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(fn);
+  } else {
+    fn();
+  }
+}
+
 function fitText() {
   var containers = document.querySelectorAll('.fit-text');
   for (var ci = 0; ci < containers.length; ci++) {
@@ -55,7 +63,7 @@ function fitText() {
     container.style.overflow = 'hidden';
 
     var i = 0;
-    while (container.scrollHeight > availHeight && fontSize > 4 && i < 50) {
+    while (container.scrollHeight > availHeight + 1 && fontSize > 4 && i < 50) {
       fontSize -= 0.5;
       span.style.fontSize = fontSize + 'px';
       p.style.lineHeight = fontSize + 'px';
@@ -113,7 +121,7 @@ ready(function () {
       });
     },
     mounted: function () {
-      if (this.diplomas.length) fitText();
+      if (this.diplomas.length) fitTextWhenReady(fitText);
     },
     methods: {
       updateDiplomas: function (rows) {
@@ -126,7 +134,7 @@ ready(function () {
         }
         this.diplomas = mapped;
         this.status = null;
-        this.$nextTick(fitText);
+        this.$nextTick(function () { fitTextWhenReady(fitText); });
       },
       updateStatus: function () {
         if (!this.tableConnected || !this.haveRows || !this.rowConnected) {
