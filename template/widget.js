@@ -23,6 +23,37 @@ function addDemo(row, isLabels) {
   return row;
 }
 
+function fitText() {
+  var containers = document.querySelectorAll('.fit-text');
+  for (var ci = 0; ci < containers.length; ci++) {
+    var container = containers[ci];
+    var span = container.querySelector('span');
+    if (!span) continue;
+
+    var p = container.querySelector('p');
+    if (!p) continue;
+
+    var availHeight = container.clientHeight;
+
+    var fontSize = parseFloat(getComputedStyle(span).fontSize) || 10;
+    span.style.fontSize = fontSize + 'px';
+    p.style.lineHeight = fontSize + 'px';
+
+    var origOverflow = container.style.overflow;
+    container.style.overflow = 'hidden';
+
+    var i = 0;
+    while (container.scrollHeight > availHeight && fontSize > 4 && i < 50) {
+      fontSize -= 0.5;
+      span.style.fontSize = fontSize + 'px';
+      p.style.lineHeight = fontSize + 'px';
+      i++;
+    }
+
+    container.style.overflow = origOverflow;
+  }
+}
+
 function handleError(err) {
   if (app) {
     app.status = 'Error: ' + (err.message || String(err));
@@ -67,6 +98,9 @@ ready(function () {
         self.updateStatus();
       });
     },
+    mounted: function () {
+      if (this.diploma) fitText();
+    },
     methods: {
       updateDiploma: function (row) {
         if (!row) { this.diploma = null; return; }
@@ -80,6 +114,8 @@ ready(function () {
         });
         this.diploma = mapped;
         this.status = null;
+        var self = this;
+        this.$nextTick(fitText);
       },
       updateStatus: function () {
         if (!this.tableConnected || !this.haveRows || !this.rowConnected) {
