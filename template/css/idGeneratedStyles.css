@@ -126,7 +126,7 @@ img.absPos {
 #_idContainerHaAvanzado {
   position:absolute;
   width:251.20px;
-  height:80px;
+  height:75px;
   left:50.269px;
   top:212px;
   background: #fdeddf;
@@ -139,7 +139,7 @@ img.absPos {
   width:81.80px;
   height:81.80px;
   left:301.174px;
-  top:248.600px;
+  top:225px;
 }
 
 #_idContainerAunNecesita {
@@ -147,15 +147,15 @@ img.absPos {
   width:267.17px;
   height:23.35px;
   left:62.170px;
-  top:317.667px;
+  top:312px;
 }
 
 #_idContainerContinuarTrabajando {
   position:absolute;
   width:283.02px;
-  height:59.39px;
+  height:65px;
   left:50.276px;
-  top:340.020px;
+  top:335px;
   background: #fdeddf;
   border-radius: 8px;
   padding: 8px 8px;
