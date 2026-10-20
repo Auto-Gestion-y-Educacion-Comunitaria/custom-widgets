@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Libros Viajeros – Credencial</title>
+  <link href="css/main.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="app">
+    <div v-if="status === 'waiting'" class="status">
+      <h2>Credencial Libros Viajeros</h2>
+      <p>Configura este widget en Grist para mostrar una credencial.</p>
+      <div class="checklist">
+        <div v-if="!tableConnected" class="pending">&#x2717; Necesito acceso de lectura a la tabla.</div>
+        <div v-if="tableConnected" class="done">&#x2713; Acceso de lectura concedido</div>
+        <div v-if="!haveRows" class="pending">&#x2717; La tabla debe tener al menos una fila.</div>
+        <div v-if="haveRows" class="done">&#x2713; Datos disponibles</div>
+        <div v-if="!rowConnected" class="pending">&#x2717; Configura "Seleccionar por" (Select By) en una columna.</div>
+        <div v-if="rowConnected" class="done">&#x2713; Select By configurado</div>
+      </div>
+      <p>
+        <a class="button" href="?demo=1">Ver demo con datos de ejemplo</a>
+        <a class="button" href="?labels=1">Ver etiquetas de columnas</a>
+      </p>
+    </div>
+    <div v-if="isError" class="status">
+      <p class="error">{{ status }}</p>
+    </div>
+
+    <div v-for="(c, idx) in credenciales" :key="idx" class="card">
+      <!-- Header -->
+      <img class="abs titulo" src="image/titulo.png" alt="Libros Viajeros">
+      <img class="abs mascota" src="image/mascota.png" alt="Mascota Libros Viajeros">
+
+      <div class="abs nombre">{{ c.nombre_completo }}</div>
+      <div class="abs idusuario">{{ c.id_usuario }}</div>
+
+      <!-- Row 1 -->
+      <div class="abs label" style="left:30px; top:326px;">Tel:</div>
+      <div class="field" style="left:120px; top:327px; width:212px;">{{ c.telefono }}</div>
+      <div class="field center" style="left:340px; top:327px; width:213px;">{{ c.fecha_nacimiento }}</div>
+      <div class="field center" style="left:560px; top:327px; width:70px;">{{ c.estado }}</div>
+
+      <!-- Row 2 -->
+      <div class="abs label" style="left:30px; top:382px;">Calle:</div>
+      <div class="field" style="left:118px; top:383px; width:330px;">{{ c.calle }}</div>
+      <div class="abs label" style="left:459px; top:382px;">N°</div>
+      <div class="field" style="left:497px; top:383px; width:135px; display:flex; justify-content:space-between;">
+        <span>{{ c.num_ext }}</span><span>{{ c.num_int }}</span>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="abs label" style="left:30px; top:439px;">Col.:</div>
+      <div class="field" style="left:118px; top:440px; width:514px;">{{ c.colonia }}</div>
+
+      <!-- Row 4 -->
+      <div class="abs label" style="left:30px; top:497px;">Curp:</div>
+      <div class="field" style="left:117px; top:498px; width:350px; font-size:22px;">{{ c.curp }}</div>
+      <div class="field center" style="left:475px; top:498px; width:157px;">{{ c.zona }}</div>
+
+      <!-- Commitment -->
+      <p class="abs compromiso">Me comprometo a cuidar y regresar a tiempo los libros que me presten, para que otras
+        personas también puedan disfrutar de ellos.</p>
+
+      <!-- Signature -->
+      <div class="abs linea"></div>
+      <div class="abs firma">{{ c.firma }}</div>
+
+      <!-- Footer -->
+      <img class="abs auge" src="image/auge.png" alt="AUGE – autogestión y educación comunitaria a.c.">
+      <div class="field"
+        style="left:283px; top:816px; width:357px; height:72px; line-height:1.2; padding-top:8px; white-space:normal;">{{
+        c.programa_de_familia }}</div>
+    </div>
+
+    <div v-if="credenciales.length" class="print">
+      <button onclick="window.print()">Imprimir credencial</button>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.3/dist/vue.min.js"></script>
+  <script src="https://docs.getgrist.com/grist-plugin-api.js"></script>
+  <script src="exampleData.js"></script>
+  <script src="widget.js"></script>
+</body>
+
+</html>

@@ -10,6 +10,7 @@ docker compose up
 
 - <http://localhost:8585/> — índice principal (enlaces a cada plantilla)
 - <http://localhost:8585/diplomas_tribus/> — Diplomas Tribus
+- <http://localhost:8585/credenciales_lv/> — Credenciales Libros Viajeros
 
 ### Modos de prueba
 

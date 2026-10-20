@@ -1,0 +1,13 @@
+{
+  "name": "@auge/widget-credencial",
+  "version": "0.0.1",
+  "description": "Custom Grist widget to render Auge reading-program credentials (Libros Viajeros) from a Grist table.",
+  "widgetId": "@auge/widget-credencial",
+  "published": true,
+  "accessLevel": "read table",
+  "renderAfterReady": true,
+  "authors": [
+    "Martin Auge"
+  ],
+  "isGristLabsMaintained": false
+}
